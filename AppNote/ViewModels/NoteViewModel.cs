@@ -84,5 +84,11 @@ namespace AppNote.ViewModels
             NoteTitle = string.Empty;
             NoteDescription = string.Empty;
         }
+
+        public void SetData()
+        {
+            NoteTitle = SelectedNote.Title;
+            NoteDescription = SelectedNote.Description;
+        }
     }
 }
