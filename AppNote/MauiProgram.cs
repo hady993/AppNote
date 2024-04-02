@@ -1,4 +1,5 @@
-﻿using AppNote.ViewModels;
+﻿using AppNote.Data;
+using AppNote.ViewModels;
 using AppNote.Views;
 using Microsoft.Extensions.Logging;
 
@@ -8,6 +9,10 @@ namespace AppNote
     {
         public static MauiApp CreateMauiApp()
         {
+            // Create Database !
+            DBContext dbContext = new DBContext();
+            dbContext.Database.EnsureCreated();
+
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
